@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('0a813dc8bffcd59feb85af3cf43f1cf2');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '하나에너지 홈페이지방문',
+        description: '아래 버튼을 눌러 웹사이트를 방문해보세요!!',
+        imageUrl:
+          'http://www.hana-energy.co.kr/diam/web/data/editor/7001/1af841b2c4c3803e12c0897c23c8d103_1707888149_7704.png',
+        link: {
+          mobileWebUrl: 'http://www.hana-energy.co.kr',
+          webUrl: 'http://www.hana-energy.co.kr',
+        },
+      },
+      social: {
+        likeCount: 99999, //99999가 최대입니다
+        commentCount: 99999, //99999가 최대입니다
+        sharedCount: 99999, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '하나에너지버튼',
+          link: {
+            mobileWebUrl: 'http://www.hana-energy.co.kr',
+            webUrl: 'http://www.hana-energy.co.kr',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
